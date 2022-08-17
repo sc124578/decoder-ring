@@ -17,9 +17,10 @@ const caesarModule = (function () {
 
   function caesar(input, shift, encode = true) {
     // your solution code here
-   if (shift > 25 || shift < -25 || shift === 0) { // This is my exclusions to the code that makes it so it returns false if any of the code contain those paramaters.
+   if (shift > 25 || shift < -25 || shift === 0 || !input) { // This is my exclusions to the code that makes it so it returns false if any of the code contain those paramaters.
     return false
-  } 
+  }
+ 
   if (shift < 0) {
   return caesar(input, shift + 26) 
   }
@@ -28,17 +29,22 @@ const caesarModule = (function () {
   let cipherText = ""
   for (let i = 0; i < message.length; i++){
    let ascii = message[i].charCodeAt()
+   const newCharacter = String.fromCharCode(((ascii - 97 + shift) % 26) + 97)
    if (encode === false) {
+    
     if (ascii >= 97 && ascii <= 122) 
-    { cipherText += String.fromCharCode(((ascii - 97 - shift) % 26) + 97)
+    { cipherText += newCharacter
+      
     } else {
       cipherText += String.fromCharCode(ascii)
     }
-    console.log(ascii)
   } else {
     if (ascii >= 97 && ascii <= 122){
-      cipherText += String.fromCharCode(((ascii - 97 + shift) % 26) + 97)
-      console.log("THIS NEEDS TO BE Seen", ascii)
+      
+      if (ascii <= 97 && ascii >= 122){
+      
+        cipherText += newCharacter
+      }
     } else {
    cipherText += String.fromCharCode(ascii)
     }
@@ -47,7 +53,7 @@ const caesarModule = (function () {
 
 }
   
-console.log("SEE THIS" ,cipherText)
+
   return cipherText
   }
   return {

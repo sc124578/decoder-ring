@@ -80,7 +80,7 @@ describe("Caesar Shift", () => { // This first describe shows what overall the t
             it("Should decript multiple words.", () => {
 
                 const input = "qefp fp x pbzobq jbppxdb"
-                const shift = 8
+                const shift = 3
                 const expected = "this is a secret message"
                 const actual = caesar(input, shift, false)
             expect(actual).to.be.equal(expected)
@@ -113,7 +113,7 @@ describe("Caesar Shift", () => { // This first describe shows what overall the t
             it("Should decript multiple words the pther way", () => {
 
                 const input = "wklv lv d vhfuhw phvvdjh"
-                const shift = -8
+                const shift = -3
                 const expected = "this is a secret message"
                 const actual = caesar(input, shift)
             expect(actual).to.be.equal(expected)
