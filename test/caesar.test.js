@@ -19,7 +19,7 @@ describe("Caesar Shift", () => { // This first describe shows what overall the t
                 it("Should be able to move multiple words", () => {
 
                     const input = "this is a secret message"
-                    const shift = 8
+                    const shift = 3
                     const expected = "wklv lv d vhfuhw phvvdjh"
                     const actual = caesar(input, shift)
                 expect(actual).to.be.equal(expected)
@@ -48,7 +48,7 @@ describe("Caesar Shift", () => { // This first describe shows what overall the t
 
                     const input = "this is a secret message"
                     const shift = -8
-                    const expected = "qefp fp x pbzobq jbppxdb"       
+                    const expected = "lzak ak s kwujwl ewkksyw"       
                     const actual = caesar(input, shift)
                 expect(actual).to.be.equal(expected)
                 })
@@ -73,7 +73,7 @@ describe("Caesar Shift", () => { // This first describe shows what overall the t
                 const input = "qefkhcri"
                 const shift = 3
                 const expected = "thinkful"
-                const actual = caesar(input, shift, false)
+                const actual = caesar(input, shift,)
             expect(actual).to.be.equal(expected)
             })
 
@@ -82,7 +82,7 @@ describe("Caesar Shift", () => { // This first describe shows what overall the t
                 const input = "qefp fp x pbzobq jbppxdb"
                 const shift = 3
                 const expected = "this is a secret message"
-                const actual = caesar(input, shift, false)
+                const actual = caesar(input, shift,)
             expect(actual).to.be.equal(expected)
             })
 
@@ -91,7 +91,7 @@ describe("Caesar Shift", () => { // This first describe shows what overall the t
                 const input = "x"
                 const shift = 3
                 const expected = "a"
-                const actual = caesar(input, shift, false)
+                const actual = caesar(input, shift,)
             expect(actual).to.be.equal(expected)
             })
 
@@ -110,7 +110,7 @@ describe("Caesar Shift", () => { // This first describe shows what overall the t
             expect(actual).to.be.equal(expected)
         })
 
-            it("Should decript multiple words the pther way", () => {
+            it("Should decript multiple words the other way", () => {
 
                 const input = "wklv lv d vhfuhw phvvdjh"
                 const shift = -3

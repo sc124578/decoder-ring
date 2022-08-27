@@ -28,7 +28,7 @@ describe("polybius() submission tests written by Thinkful", () => {
     });
   });
 
-  describe("decoding a message", () => {
+  describe.only("decoding a message", () => {
     it("should decode a message by translating each pair of numbers into a letter", () => {
       const message = "23513434112251";
       const actual = polybius(message, false);

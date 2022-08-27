@@ -16,18 +16,19 @@ const caesarModule = (function () {
   // you can add any code you want within this function scope
 
   function caesar(input, shift, encode = true) {
+    
     // your solution code here
    if (shift > 25 || shift < -25 || shift === 0 || !input) { // This is my exclusions to the code that makes it so it returns false if any of the code contain those paramaters.
     return false
   }
- 
+  shift *= encode ? 1: -1 //This is to make sure decoding is correct
   if (shift < 0) {
-  return caesar(input, shift + 26) 
+    return caesar(input, shift + 26) // I found this method online, I belive it helps with wrapping around the alphabet
   }
   
-  const message = input.toLowerCase()
-  let cipherText = ""
-  for (let i = 0; i < message.length; i++){
+  const message = input.toLowerCase() // I need to make sure to make all letters lowercase
+  let cipherText = "" // the cipherText will become the desired outcome
+  for (let i = 0; i < message.length; i++){ // loop through each letter to find its code of the ascii chart
    let ascii = message[i].charCodeAt()
    const newCharacter = String.fromCharCode(((ascii - 97 + shift) % 26) + 97)
    if (encode === false) {
@@ -38,18 +39,15 @@ const caesarModule = (function () {
     } else {
       cipherText += String.fromCharCode(ascii)
     }
-  } else {
-    if (ascii >= 97 && ascii <= 122){
-      
-      if (ascii <= 97 && ascii >= 122){
-      
+  }  else {
+    if (ascii >= 97 && ascii <= 122 || ascii <= 97 && ascii >= 122){
         cipherText += newCharacter
       }
-    } else {
+     else {
    cipherText += String.fromCharCode(ascii)
     }
   }
-    
+
 
 }
   
