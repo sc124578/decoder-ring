@@ -1,6 +1,6 @@
 // Write your tests here!
 const { substitution } = require("../src/substitution");
-const expect = require("chai")
+const expect = require("chai").expect
 
 describe("Substitution", () => {
     describe("Errors", () => {
