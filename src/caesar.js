@@ -29,11 +29,11 @@ const caesarModule = (function () {
   const message = input.toLowerCase() // I need to make sure to make all letters lowercase
   let cipherText = "" // the cipherText will become the desired outcome
   for (let i = 0; i < message.length; i++){ // loop through each letter to find its code of the ascii chart
-   let ascii = message[i].charCodeAt()
-   const newCharacter = String.fromCharCode(((ascii - 97 + shift) % 26) + 97)
-   if (encode === false) {
+   let ascii = message[i].charCodeAt() //Make a new declaration that takes the input after it is looped and find its position on the ascii chart
+   const newCharacter = String.fromCharCode(((ascii - 97 + shift) % 26) + 97)//takes the previous declaration plus some additional math to find out what the code should be with an input.
+   if (encode === false) { //if it is a decode and not an encode.
     
-    if (ascii >= 97 && ascii <= 122) 
+    if (ascii >= 97 && ascii <= 122) //if the ascii is within the lowercase letter value it will change the found input into the declared variable 
     { cipherText += newCharacter
       
     } else {
@@ -60,4 +60,5 @@ const caesarModule = (function () {
 })();
 
 module.exports = { caesar: caesarModule.caesar };
+
 
